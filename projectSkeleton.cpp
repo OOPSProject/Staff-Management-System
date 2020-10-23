@@ -1,4 +1,4 @@
-#include<iostream>
+ #include<iostream>
 #include<iomanip>
 using namespace std;
 
@@ -65,7 +65,7 @@ inline void addCredentials()
 
 
 
-    //Enter credentials for a particular employee 
+    //Enter credentials for a particular employee
     Employee* newNode = new Employee();
     newNode->next = NULL;
     newNode->name = name;
@@ -99,13 +99,13 @@ inline void deleteCredentials()
     cin>>id;
 
     Employee* ptr = first;
-    
+
     while(ptr->emp_ID!=id)
         {
             ptr = ptr->next;
             tracker++;
         }
-    
+
     if(tracker==1)
     {
         first = first->next;
@@ -115,7 +115,7 @@ inline void deleteCredentials()
     else
     {
         Employee* ptr = first;
-        
+
         while(ptr->next->emp_ID!=id)
         {
             ptr = ptr->next;
@@ -137,10 +137,10 @@ inline void searchCredential()
     cin>>id;
 
     Employee* ptr = first;
-    
+
     while(ptr->emp_ID!=id && ptr!=NULL)
         ptr = ptr->next;
-    
+
     if(ptr==NULL)
     {
         cout<<"there is no employee with the id : "<<id<<endl;
@@ -176,8 +176,21 @@ inline void displayRecord()
 //driver method
 int main(void)
 {
-    int choice=0;
-
+    int choice=0,i=4;
+    string s;
+    //login code
+    do
+    {
+        cout<<"Enter the password- ";
+        getline(cin,s);
+        cout<<"Attempts left- "<<--i<<endl;
+        if(i==0)
+        {
+            cout<<"Attemps over!!";
+            exit(1);
+            system("cls");
+        }
+    }while(s!="pass");
     //application loop
     while(choice!=-1)
     {
