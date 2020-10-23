@@ -30,6 +30,7 @@ Employee* first = NULL;
 //Menu
 inline void menu()
 {
+ 
     cout<<"\n\nEnter 1 to add details of an employee"<<endl;
     cout<<"Enter 2 to delete the employee record"<<endl;
     cout<<"Enter 3 to search a credential"<<endl;
